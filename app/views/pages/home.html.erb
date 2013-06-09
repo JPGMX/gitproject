@@ -1,0 +1,12 @@
+<% @pages.each do |page| %>
+
+    <div class="post">
+      <h2 class="title"><%= link_to page.title, page %></h2>
+      <br/>
+
+      <div class="entry">
+        <%= page.content.html_safe %>
+      </div>
+    </div>
+
+<% end %>
