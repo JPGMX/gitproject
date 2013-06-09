@@ -1,30 +1,29 @@
 class PagesController < ApplicationController
-http_basic_authenticate_with :name=> "admin", :password => "secret", :except => [:show, :home]
 
-  # GET /pages
-  # GET /pages.json
-def home
-  @pages= Page.all
-end
-def index
+  http_basic_authenticate_with :name => "admin", :password => "secret", :except => [:show, :home]
+
+  def home
     @pages = Page.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @pages }
-    end
   end
 
-  # GET /pages/1
-  # GET /pages/1.json
+  def admin
+
+  end
+
+  def contact
+
+  end
+
+  def index
+    @pages = Page.all
+  end
+
   def show
     @page = Page.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @page }
-    end
   end
+
+
+  ## keep for now !!
 
   # GET /pages/new
   # GET /pages/new.json
